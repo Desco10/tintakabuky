@@ -1099,8 +1099,8 @@ line-height:1.7;
 ========================= */
 
 .hero-product {
-  width: 520px;
-  max-width: 90%;
+  width: 400px;
+  max-width: 220%;
   cursor: pointer;
   position: relative;
 
