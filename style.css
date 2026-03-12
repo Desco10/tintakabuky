@@ -1287,3 +1287,187 @@ line-height:1.7;
   }
 
 }
+
+
+
+
+
+/* =========================
+   FOOTER VIDEO CINEMATIC
+========================= */
+
+.footer-video{
+  position:relative;
+  width:100%;
+  height:260px;   /* antes 420px */
+  overflow:hidden;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  color:#4a0b0b;
+}
+
+/* VIDEO */
+
+
+
+.footer-video::before{
+
+  content:"";
+
+  position:absolute;
+
+  top:-60px;
+
+  width:100%;
+
+  height:120px;
+
+  background:linear-gradient(
+  to bottom,
+  rgb(50, 5, 5),
+  transparent
+  );
+
+  z-index:4;
+
+}
+
+.footer-bg-video{
+
+  position:absolute;
+
+  top:50%;
+
+  left:50%;
+
+  min-width:100%;
+
+  min-height:100%;
+
+  transform:translate(-50%,-50%);
+
+  object-fit:cover;
+
+  z-index:1;
+
+  filter:
+  brightness(.7)
+  contrast(1.05)
+  saturate(1.15);
+
+}
+
+/* OVERLAY COSMETICO */
+
+.footer-overlay{
+
+  position:absolute;
+
+  width:100%;
+
+  height:100%;
+
+  background:
+
+  linear-gradient(
+  180deg,
+  rgba(255, 158, 197, 0.807),
+  rgba(250, 250, 250, 0.64)
+  );
+
+  z-index:2;
+
+}
+
+/* CONTENIDO */
+
+.footer-content{
+
+  position:relative;
+
+  z-index:3;
+
+  max-width:500px;
+
+  padding:10px;
+
+}
+
+.footer-content h3{
+
+  font-size:26px;
+
+  margin-bottom:8px;
+
+  letter-spacing:2px;
+
+  color:#7a1a1a;
+
+  text-shadow:
+  0 2px 6px rgba(255,255,255,.8),
+  0 4px 14px rgba(255,120,160,.35);
+
+}
+
+.footer-content p{
+
+  font-size:14px;
+
+  line-height:1.5;
+
+  color:#5c2b2b;
+
+  font-weight:500;
+
+  text-shadow:
+  0 1px 4px rgba(255,255,255,.7);
+
+}
+
+@keyframes footerShimmer{
+
+  0%{
+    background-position:0%;
+  }
+
+  100%{
+    background-position:200%;
+  }
+
+}
+
+/* =========================
+   FOOTER RESPONSIVE
+========================= */
+
+@media(max-width:768px){
+
+  .footer-video{
+
+    height:300px;
+
+  }
+
+  .footer-content h3{
+
+    font-size:22px;
+
+  }
+
+  .footer-content p{
+
+    font-size:14px;
+
+  }
+
+}
+
+@media(max-width:768px){
+
+  .footer-video{
+    height:200px;
+  }
+
+}
