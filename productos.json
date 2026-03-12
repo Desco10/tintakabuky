@@ -1,0 +1,13 @@
+{
+  "producto": "Kabuki Lip Tint",
+  "precios": {
+    "detal": {
+      "precio": 25000,
+      "mensaje": "Hola como esta , quiero comprar el Kabuki Lip Tint al precio detal."
+    },
+    "mayor": {
+      "precio": 18000,
+      "mensaje": "Hola como esta , quiero comprar el Kabuki Lip Tint , precio al por mayor."
+    }
+  }
+}

@@ -1,0 +1,1289 @@
+/* =========================
+   BASE GENERAL
+========================= */
+body{
+  margin:0;
+  font-family:'Poppins',sans-serif;
+  background:#fff0f5;
+  overflow-x:hidden;
+}
+
+/* =========================
+   HERO PROFESIONAL
+========================= */
+#hero{
+  height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  position:relative;
+  overflow:hidden;
+  background:linear-gradient(135deg,#ff6b9d,#ff9ecf);
+  transition:background 0.8s cubic-bezier(.77,0,.18,1);
+}
+
+/* Estado inicial */
+.hero-default{
+  background:linear-gradient(135deg,#ff6b9d,#ff9ecf);
+}
+
+/* Estado activo */
+.hero-active{
+  background:linear-gradient(135deg,#b3123f,#ff4d88);
+}
+
+/* Producto flotante */
+.floating{
+  width:220px;
+  cursor:pointer;
+  animation:float 4s ease-in-out infinite;
+  transition:transform .4s ease, filter .4s ease;
+}
+
+.floating:hover{
+  transform:scale(1.08);
+  filter:drop-shadow(0 20px 25px rgba(0,0,0,0.25));
+}
+
+@keyframes float{
+  0%{transform:translateY(0)}
+  50%{transform:translateY(-20px)}
+  100%{transform:translateY(0)}
+}
+
+/* =========================
+   CARRUSEL 3D PREMIUM
+========================= */
+/* =========================
+   CARRUSEL 3D PREMIUM
+========================= */
+
+.carousel-section{
+  padding:100px 0;
+  background:#fff5f8;
+  text-align:center;
+}
+
+.carousel-3d{
+  width:100%;
+  height:420px;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  perspective:1400px;
+  overflow:hidden;
+}
+
+.carousel-track{
+  position:relative;
+  width:100%;
+  height:100%;
+  transform-style:preserve-3d;
+}
+
+.carousel-item{
+  position:absolute;
+  left:50%;
+  top:50%;
+  transform-style:preserve-3d;
+  transition:transform .9s cubic-bezier(.25,.8,.25,1),
+             opacity .9s;
+}
+
+/* Imagen */
+
+.carousel-item img{
+
+  width:240px;
+  border-radius:18px;
+
+  box-shadow:
+  0 25px 45px rgba(0,0,0,.25);
+
+}
+
+/* REFLEJO tipo vitrina */
+
+.carousel-item img{
+  -webkit-box-reflect: below 6px linear-gradient(transparent,rgba(0,0,0,.2));
+}
+
+/* POSICIONES */
+
+.carousel-item.active{
+
+  transform:
+  translate(-50%,-50%)
+  translateZ(220px)
+  scale(1.18);
+
+  z-index:6;
+  opacity:1;
+
+}
+
+.carousel-item.left{
+
+  transform:
+  translate(calc(-50% - 240px),-50%)
+  rotateY(40deg)
+  translateZ(80px)
+  scale(.9);
+
+  z-index:4;
+  opacity:.85;
+
+}
+
+.carousel-item.right{
+
+  transform:
+  translate(calc(-50% + 240px),-50%)
+  rotateY(-40deg)
+  translateZ(80px)
+  scale(.9);
+
+  z-index:4;
+  opacity:.85;
+
+}
+
+.carousel-item.back-left{
+
+  transform:
+  translate(calc(-50% - 420px),-50%)
+  rotateY(50deg)
+  translateZ(-80px)
+  scale(.7);
+
+  opacity:.5;
+
+}
+
+.carousel-item.back-right{
+
+  transform:
+  translate(calc(-50% + 420px),-50%)
+  rotateY(-50deg)
+  translateZ(-80px)
+  scale(.7);
+
+  opacity:.5;
+
+}
+
+/* zoom al hacer click */
+
+.carousel-item.zoomed{
+
+  transform:
+  translate(-50%,-50%)
+  scale(1.8)
+  translateZ(260px);
+
+  z-index:999;
+
+}
+ 
+
+
+/* ILUMINACIÓN DE ESTUDIO */
+
+.carousel-3d::before{
+
+  content:"";
+  position:absolute;
+  width:700px;
+  height:700px;
+
+  background:radial-gradient(circle,
+  rgba(255,180,210,0.35),
+  rgba(255,200,230,0.15),
+  transparent 70%);
+
+  filter:blur(80px);
+
+  z-index:0;
+
+}
+
+.carousel-item img{
+
+  width:240px;
+  border-radius:18px;
+
+  box-shadow:
+  0 25px 45px rgba(0,0,0,.25),
+  0 0 25px rgba(255,160,200,.25);
+
+  transition:transform .6s, box-shadow .6s;
+
+}
+
+.carousel-item.active img{
+
+  box-shadow:
+  0 35px 60px rgba(0,0,0,.35),
+  0 0 40px rgba(255,160,200,.35);
+
+}
+
+.carousel-item img{
+  -webkit-box-reflect:
+  below 8px
+  linear-gradient(
+  transparent,
+  rgba(0,0,0,.25)
+  );
+}
+
+.carousel-3d::after{
+
+  content:"";
+  position:absolute;
+  inset:0;
+
+  background-image:
+  radial-gradient(rgba(255,170,200,.35) 1px, transparent 1px);
+
+  background-size:80px 80px;
+
+  opacity:.15;
+
+  animation:particlesMove 18s linear infinite;
+
+  pointer-events:none;
+
+}
+
+@keyframes particlesMove{
+
+  from{
+    transform:translateY(0);
+  }
+
+  to{
+    transform:translateY(-120px);
+  }
+
+}
+
+
+.carousel-item:hover img{
+
+  transform:translateY(-10px) scale(1.05);
+
+}
+
+
+.carousel-item.active{
+
+  animation:productFloat 6s ease-in-out infinite;
+
+}
+
+@keyframes productFloat{
+
+  0%{
+    transform:translate(-50%,-50%) translateZ(220px) scale(1.18);
+  }
+
+  50%{
+    transform:translate(-50%,-54%) translateZ(220px) scale(1.20);
+  }
+
+  100%{
+    transform:translate(-50%,-50%) translateZ(220px) scale(1.18);
+  }
+
+}
+
+.carousel-track{
+  opacity:0;
+  transition:opacity 1.2s ease;
+}
+
+
+
+/* HALO COSMETICO */
+
+.carousel-item.active img{
+
+  box-shadow:
+  0 30px 60px rgba(0,0,0,.35),
+  0 0 50px rgba(255,120,180,.55),
+  0 0 90px rgba(255,180,210,.35);
+
+}
+
+
+
+
+
+
+
+body.overlay{
+  background:rgba(0,0,0,0.6);
+}
+
+/* =========================
+   BOTÓN HALO PREMIUM
+========================= */
+.halo-button{
+  position:relative;
+  display:inline-block;
+  cursor:pointer;
+  transition:transform .4s ease;
+}
+
+.halo-button:hover{
+  transform:scale(1.08);
+}
+
+.halo-button img{
+  width:130px;
+  position:relative;
+  z-index:2;
+}
+
+/* Halo animado elegante */
+.halo-button::after{
+  content:'';
+  position:absolute;
+  top:50%;
+  left:50%;
+  width:180px;
+  height:180px;
+  background:radial-gradient(circle,
+    rgba(255,105,180,0.6) 0%,
+    rgba(255,105,180,0.3) 40%,
+    transparent 70%);
+  transform:translate(-50%,-50%);
+  animation:glow 2.5s ease-in-out infinite;
+  z-index:1;
+  border-radius:50%;
+}
+
+@keyframes glow{
+  0%{opacity:0.5; transform:translate(-50%,-50%) scale(0.9);}
+  50%{opacity:1; transform:translate(-50%,-50%) scale(1.1);}
+  100%{opacity:0.5; transform:translate(-50%,-50%) scale(0.9);}
+}
+
+/* =========================
+   UTILIDADES
+========================= */
+.hidden{
+  display:none;
+}
+
+/* =========================
+   SECCIÓN PRESENTACIONES
+========================= */
+/* =========================
+   PRESENTACIONES
+========================= */
+/* =========================
+   SECCION PRESENTACIONES
+========================= */
+
+.presentaciones{
+  padding:120px 20px;
+  text-align:center;
+
+  /* fondo elegante */
+  background:
+  radial-gradient(circle at top, #ffe3ee 0%, transparent 60%),
+  linear-gradient(180deg,#ffffff,#fff7fa);
+}
+
+/* titulo */
+.presentaciones h2{
+  font-size:2.3rem;
+  margin-bottom:60px;
+  color:#222;
+  font-weight:700;
+}
+
+/* contenedor principal */
+.presentaciones-container{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:60px;
+  max-width:1100px;
+  margin:auto;
+}
+
+/* =========================
+   PRODUCTO PRINCIPAL
+========================= */
+
+.main-product{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
+.main-product img{
+  width:360px;
+  height:460px;
+  object-fit:cover;
+  border-radius:22px;
+
+  box-shadow:
+  0 30px 60px rgba(0,0,0,0.18),
+  0 10px 20px rgba(0,0,0,0.08);
+
+  transition:
+  transform .4s ease,
+  opacity .3s ease;
+}
+
+.main-product img:hover{
+  transform:scale(1.03);
+}
+
+/* =========================
+   THUMBNAILS LATERALES
+========================= */
+
+.thumbnails{
+  display:flex;
+  flex-direction:column;
+  gap:18px;
+}
+
+.thumbnails img{
+  width:95px;
+  height:115px;
+  object-fit:cover;
+  border-radius:14px;
+
+  cursor:pointer;
+
+  box-shadow:0 10px 25px rgba(0,0,0,0.15);
+
+  transition:
+  transform .3s ease,
+  box-shadow .3s ease;
+}
+
+.thumbnails img:hover{
+  transform:scale(1.12);
+  box-shadow:0 15px 35px rgba(0,0,0,0.25);
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width:900px){
+
+  .presentaciones-container{
+    flex-direction:column;
+  }
+
+  .thumbnails{
+    flex-direction:row;
+    justify-content:center;
+  }
+
+  .main-product img{
+    width:280px;
+    height:380px;
+  }
+
+  .thumbnails img{
+    width:75px;
+    height:95px;
+  }
+
+}
+
+
+/* =========================
+   PRESENTACIONES BACKGROUND
+========================= */
+
+.presentaciones{
+
+  position:relative;
+
+  padding:120px 20px;
+
+  background:linear-gradient(
+    135deg,
+    #ffe6f1,
+    #ffd2e8,
+    #fff5fa
+  );
+
+  overflow:hidden;
+
+}
+
+.presentaciones::before{
+
+  content:"";
+  position:absolute;
+
+  width:600px;
+  height:600px;
+
+  background:radial-gradient(
+    circle,
+    rgba(255,160,200,.35),
+    transparent 70%
+  );
+
+  top:-200px;
+  right:-150px;
+
+  filter:blur(80px);
+
+}
+
+.presentaciones::after{
+
+  content:"";
+  position:absolute;
+
+  width:500px;
+  height:500px;
+
+  background:radial-gradient(
+    circle,
+    rgba(255,190,220,.35),
+    transparent 70%
+  );
+
+  bottom:-200px;
+  left:-150px;
+
+  filter:blur(90px);
+
+}
+
+
+.presentaciones-texto{
+
+  max-width:420px;
+
+  text-align:left;
+
+}
+
+.presentaciones-texto h3{
+
+  font-size:28px;
+
+  margin-bottom:15px;
+
+}
+
+.presentaciones-texto p{
+
+  font-size:16px;
+
+  line-height:1.6;
+
+  color:#555;
+
+}
+
+.presentacion-productos img{
+  position:relative;
+  z-index:5;
+  cursor:pointer;
+}
+
+
+/* =========================
+   PRESENTACIONES LAYOUT
+========================= */
+
+.presentaciones-layout{
+
+  display:grid;
+
+  grid-template-columns:
+  1fr 380px 120px;
+
+  align-items:center;
+
+  gap:50px;
+
+  max-width:1200px;
+
+  margin:auto;
+
+}
+
+.carousel-track{
+  pointer-events:none;
+}
+
+.carousel-item{
+  pointer-events:auto;
+}
+
+.carousel-item.active{
+  z-index:20;
+}
+/* =========================
+   TESTIMONIOS
+========================= */
+/* =========================
+   TESTIMONIOS PREMIUM
+========================= */
+
+.testimonios{
+  padding:120px 20px;
+  text-align:center;
+  background:
+  radial-gradient(circle at top,#ffe4ee 0%,#fff7fb 60%,#ffffff 100%);
+}
+
+.testimonios h2{
+  font-size:2.4rem;
+  margin-bottom:70px;
+  color:#222;
+}
+
+/* grid */
+.testimonios-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:40px;
+  max-width:1100px;
+  margin:auto;
+}
+
+/* =========================
+   TARJETAS REVISTA
+========================= */
+
+.testimonio-card{
+  background:white;
+  border-radius:20px;
+  overflow:hidden;
+
+  box-shadow:
+  0 20px 40px rgba(0,0,0,0.12),
+  0 5px 10px rgba(0,0,0,0.06);
+
+  transition:
+  transform .4s ease,
+  box-shadow .4s ease;
+
+  cursor:pointer;
+  position:relative;
+}
+
+/* marco fotográfico */
+.testimonio-card::before{
+  content:'';
+  position:absolute;
+  inset:0;
+  border-radius:20px;
+  padding:2px;
+  background:linear-gradient(135deg,#ff9ecf,#ff6b9d);
+  -webkit-mask:
+  linear-gradient(#fff 0 0) content-box,
+  linear-gradient(#fff 0 0);
+  -webkit-mask-composite:xor;
+  mask-composite:exclude;
+}
+
+/* hover */
+.testimonio-card:hover{
+  transform:translateY(-10px);
+  box-shadow:
+  0 30px 60px rgba(0,0,0,0.18);
+}
+
+/* imagen */
+.testimonio-card img{
+  width:100%;
+  height:260px;
+  object-fit:cover;
+}
+
+/* contenido */
+.testimonio-info{
+  padding:20px;
+  text-align:left;
+}
+
+.testimonio-info h4{
+  margin:0;
+  font-size:1.1rem;
+  color:#222;
+}
+
+.stars{
+  color:#ff3b6f;
+  margin:6px 0 10px;
+  font-size:1rem;
+}
+
+.testimonio-info p{
+  font-size:.95rem;
+  color:#555;
+  line-height:1.5;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width:700px){
+
+.testimonios{
+padding:90px 15px;
+}
+
+.testimonio-card img{
+height:220px;
+}
+
+}
+
+/* ========================= 
+   WHATSAPP ICON ANIMADO
+========================= */
+
+.whatsapp-container{
+  margin-top:60px;
+  display:flex;
+  justify-content:center;
+}
+
+.whatsapp-btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+}
+
+/* icono */
+.whatsapp-btn img{
+  width:110px;
+  animation:whatsappFloat 2s ease-in-out infinite;
+  transition:transform .3s ease;
+}
+
+/* efecto hover */
+.whatsapp-btn:hover img{
+  transform:scale(1.15);
+}
+
+/* animación suave */
+@keyframes whatsappFloat{
+  0%{
+    transform:scale(1);
+  }
+  50%{
+    transform:scale(1.1);
+  }
+  100%{
+    transform:scale(1);
+  }
+}
+/* =========================
+   PRECIOS
+/* =========================
+   SECCION PRECIOS PREMIUM
+========================= */
+
+.precios{
+padding:120px 20px;
+text-align:center;
+background:
+linear-gradient(180deg,#ffffff,#fff5f8);
+}
+
+.precios h2{
+font-size:2.3rem;
+margin-bottom:70px;
+color:#222;
+}
+
+/* contenedor */
+
+.precio-wrapper{
+display:flex;
+align-items:center;
+justify-content:center;
+gap:50px;
+max-width:900px;
+margin:auto;
+}
+
+/* columnas */
+
+.precio-col{
+flex:1;
+max-width:350px;
+padding:20px;
+text-align:center;
+}
+
+.precio-col h3{
+font-size:1.2rem;
+margin-bottom:15px;
+color:#444;
+}
+
+/* precio */
+
+.precio{
+display:block;
+font-size:2.2rem;
+font-weight:700;
+color:#ff3b6f;
+margin-bottom:15px;
+}
+
+/* texto */
+
+.precio-desc{
+font-size:.95rem;
+color:#666;
+line-height:1.6;
+margin-bottom:25px;
+}
+
+/* botón */
+
+.btn-comprar{
+background:#ff3b6f;
+color:white;
+border:none;
+padding:14px 32px;
+border-radius:40px;
+font-size:.95rem;
+cursor:pointer;
+
+transition:all .3s ease;
+}
+
+.btn-comprar:hover{
+transform:translateY(-3px);
+box-shadow:0 10px 25px rgba(255,59,111,.35);
+}
+
+/* columna destacada */
+
+.destacado{
+position:relative;
+}
+
+.destacado::before{
+content:"RECOMENDADO";
+position:absolute;
+top:-18px;
+left:50%;
+transform:translateX(-50%);
+
+background:#ff3b6f;
+color:white;
+font-size:.7rem;
+padding:5px 12px;
+border-radius:20px;
+letter-spacing:.5px;
+}
+
+/* divisor elegante */
+
+.precio-divider{
+width:1px;
+height:150px;
+background:
+linear-gradient(180deg,
+transparent,
+#ffc6da,
+transparent);
+}
+
+/* responsive */
+
+@media (max-width:800px){
+
+.precio-wrapper{
+flex-direction:column;
+gap:40px;
+}
+
+.precio-divider{
+display:none;
+}
+
+}
+/* =========================
+   INFO PRODUCTO
+/* =========================
+   INFO PRODUCTO PREMIUM
+========================= */
+
+.producto-info{
+padding:120px 20px;
+text-align:center;
+background:
+linear-gradient(180deg,#fff7fb,#ffffff);
+}
+
+.producto-info h2{
+font-size:2.4rem;
+margin-bottom:30px;
+color:#222;
+}
+
+/* intro */
+
+.producto-intro{
+max-width:700px;
+margin:auto;
+font-size:1.1rem;
+color:#555;
+line-height:1.7;
+margin-bottom:70px;
+}
+
+/* =========================
+   BENEFICIOS
+========================= */
+
+.beneficios-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:30px;
+max-width:1000px;
+margin:auto;
+}
+
+.beneficio{
+background:white;
+padding:30px;
+border-radius:20px;
+
+box-shadow:
+0 15px 30px rgba(0,0,0,0.08);
+
+transition:all .4s ease;
+}
+
+.beneficio:hover{
+transform:translateY(-8px);
+box-shadow:
+0 25px 50px rgba(0,0,0,0.12);
+}
+
+.beneficio h3{
+color:#ff3b6f;
+margin-bottom:10px;
+font-size:1.1rem;
+}
+
+.beneficio p{
+font-size:.95rem;
+color:#555;
+}
+
+/* =========================
+   HISTORIA MARCA
+========================= */
+
+.producto-historia{
+margin-top:90px;
+max-width:750px;
+margin-left:auto;
+margin-right:auto;
+
+background:#fff0f6;
+padding:40px;
+border-radius:22px;
+
+box-shadow:0 20px 40px rgba(0,0,0,0.08);
+}
+
+.producto-historia h3{
+color:#ff3b6f;
+margin-bottom:15px;
+}
+
+.producto-historia p{
+color:#555;
+line-height:1.7;
+}
+/* =========================
+   HERO BASE
+========================= */
+
+#hero {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding-top: 80px; /* Baja visualmente el contenido */
+}
+
+/* =========================
+   VIDEO
+========================= */
+
+#heroVideo{
+  position:absolute;
+  top:50%;
+  left:50%;
+  min-width:100%;
+  min-height:100%;
+  transform:translate(-50%,-50%);
+  object-fit:cover;
+  z-index:0;
+}
+
+/* =========================
+   OVERLAY
+========================= */
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(255,59,111,0.55),
+    rgba(255,179,198,0.35)
+  );
+  transition: background 0.6s ease;
+  z-index: 1;
+}
+
+/* =========================
+   CONTENIDO
+========================= */
+
+.hero-content {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 25px;
+  transform: translateY(40px); /* Baja todo el bloque */
+}
+
+/* =========================
+   TITULOS
+========================= */
+
+.hero-title {
+  font-size: 3rem;
+  color: white;
+  margin: 0;
+}
+
+.hero-subtitle {
+  font-size: 1.2rem;
+  color: white;
+  opacity: 0.9;
+  margin: 0 0 20px 0;
+}
+
+/* =========================
+   PRODUCTO 3D PRO
+========================= */
+
+.hero-product {
+  width: 520px;
+  max-width: 90%;
+  cursor: pointer;
+  position: relative;
+
+  transform-style: preserve-3d;
+  transition: transform 0.5s ease-out, filter 0.4s ease;
+
+  filter: drop-shadow(0 40px 60px rgba(0,0,0,0.35));
+}
+
+/* Hover elegante */
+.hero-product:hover {
+  transform: scale(1.05) rotateY(8deg);
+}
+
+/* Animación click limpia */
+.click-animate {
+  animation: productClick 0.6s ease-out;
+}
+
+@keyframes productClick {
+  0% { transform: scale(1) rotateY(0deg); }
+  50% { transform: scale(1.12) rotateY(12deg); }
+  100% { transform: scale(1) rotateY(0deg); }
+}
+
+/* Sombra suave debajo */
+.hero-product::after {
+  content: "";
+  position: absolute;
+  bottom: -35px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60%;
+  height: 30px;
+  background: radial-gradient(ellipse at center,
+    rgba(0,0,0,0.4) 0%,
+    transparent 70%);
+  filter: blur(10px);
+  z-index: -1;
+}
+
+/* =========================
+   LOGO FIJO ABAJO
+========================= */
+
+.hero-logo {
+  position: absolute;
+  bottom: 450px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 70px;
+  z-index: 3;
+  opacity: 0.9;
+}
+
+
+/* =========================
+   SCROLL REVEAL
+========================= */
+
+/* =========================
+   SCROLL REVEAL PREMIUM
+========================= */
+
+.reveal{
+
+  opacity:0;
+
+  transform:
+  translateY(80px)
+  scale(.96);
+
+  filter:blur(8px);
+
+  transition:
+
+  opacity 1.1s cubic-bezier(.25,.8,.25,1),
+  transform 1.1s cubic-bezier(.25,.8,.25,1),
+  filter 1.1s ease;
+
+}
+
+.reveal.visible{
+
+  opacity:1;
+
+  transform:
+  translateY(0)
+  scale(1);
+
+  filter:blur(0);
+
+}
+
+.reveal-left{
+
+  transform:
+  translateX(-120px)
+  scale(.96);
+
+}
+
+.reveal-right{
+
+  transform:
+  translateX(120px)
+  scale(.96);
+
+}
+
+.reveal-left.visible,
+.reveal-right.visible{
+
+  transform:
+  translateX(0)
+  scale(1);
+
+}
+
+.reveal:nth-child(1){transition-delay:.1s}
+.reveal:nth-child(2){transition-delay:.2s}
+.reveal:nth-child(3){transition-delay:.3s}
+
+
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width:900px){
+
+  .presentaciones-layout{
+
+    grid-template-columns:1fr;
+
+    text-align:center;
+
+  }
+
+  .presentaciones-texto{
+
+    margin:auto;
+
+  }
+
+  .thumbnails{
+
+    flex-direction:row;
+
+    justify-content:center;
+
+  }
+
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width:600px){
+
+  .main-product img{
+
+    width:260px;
+
+    height:360px;
+
+  }
+
+  .thumbnails img{
+
+    width:70px;
+
+    height:90px;
+
+  }
+
+  .presentaciones-texto h3{
+
+    font-size:22px;
+
+  }
+
+}
