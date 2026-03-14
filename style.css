@@ -8,6 +8,10 @@ body{
   overflow-x:hidden;
 }
 
+img,a,button,div{
+-webkit-tap-highlight-color:transparent;
+tap-highlight-color:transparent;
+}
 /* =========================
    HERO PROFESIONAL
 ========================= */
@@ -112,15 +116,12 @@ body{
 /* POSICIONES */
 
 .carousel-item.active{
-
-  transform:
-  translate(-50%,-50%)
-  translateZ(220px)
-  scale(1.18);
-
-  z-index:6;
-  opacity:1;
-
+transform:
+translate(-50%,-50%)
+translateZ(200px)
+scale(1.05);
+z-index:6;
+opacity:1;
 }
 
 .carousel-item.left{
@@ -209,13 +210,11 @@ body{
 }
 
 .carousel-item img{
-
-  width:240px;
-  border-radius:18px;
-
-  box-shadow:
-  0 25px 45px rgba(0,0,0,.25),
-  0 0 25px rgba(255,160,200,.25);
+width:240px;
+border-radius:24px;
+box-shadow:
+0 20px 40px rgba(0,0,0,.25),
+0 0 25px rgba(255,160,200,.25);
 
   transition:transform .6s, box-shadow .6s;
 
@@ -251,7 +250,7 @@ body{
 
   opacity:.15;
 
-  animation:particlesMove 18s linear infinite;
+animation:particlesMove 35s linear infinite;
 
   pointer-events:none;
 
@@ -541,7 +540,7 @@ body.overlay{
   top:-200px;
   right:-150px;
 
-  filter:blur(80px);
+  filter:blur(40px);
 
 }
 
@@ -562,7 +561,7 @@ body.overlay{
   bottom:-200px;
   left:-150px;
 
-  filter:blur(90px);
+  filter:blur(45px);
 
 }
 
@@ -1099,8 +1098,8 @@ line-height:1.7;
 ========================= */
 
 .hero-product {
-  width: 400px;
-  max-width: 220%;
+  width:380px;
+  max-width:90%;
   cursor: pointer;
   position: relative;
 

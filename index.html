@@ -41,13 +41,20 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 
 <link rel="stylesheet" href="style.css">
+
+<link rel="preload" as="video" href="video/labios2.mp4" type="video/mp4">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+
 <body>
 
 <header id="hero">
 
-  <video autoplay muted loop id="heroVideo">
-    <source src="video/labios2.mp4" type="video/mp4">
-  </video>
+  <video autoplay muted loop playsinline preload="metadata" id="heroVideo">
+
+<source src="video/labios2.mp4" type="video/mp4">
+
+</video>
 
   <div class="hero-overlay"></div>
 
@@ -57,7 +64,7 @@
 </h1>
     <p class="hero-subtitle"> Color irresistible que enamora</p>
 
-    <img src="img/sinpro1.png" id="heroProduct" class="hero-product reveal-right">
+    <img src="img/sinpro1.png" id="heroProduct" class="hero-product reveal-right" alt="Tinta Kabuki Moni Solano">
 
   </div>
 
@@ -90,14 +97,18 @@
     </div>
 
     <div class="main-product">
-      <img id="mainProduct" src="/img/historia14.jpeg">
+      <img id="mainProduct" src="/img/historia14.jpeg" loading="lazy" alt="Producto Kabuki">
     </div>
 
     <div class="thumbnails">
-      <img src="img/historia1.jpeg" onclick="cambiarProducto(this)">
-      <img src="img/historia2.jpeg" onclick="cambiarProducto(this)">
-      <img src="img/historia3.jpeg" onclick="cambiarProducto(this)">
-    </div>
+
+<img src="img/historia1.jpeg" loading="lazy" onclick="cambiarProducto(this)" alt="Presentación 1">
+
+<img src="img/historia2.jpeg" loading="lazy" onclick="cambiarProducto(this)" alt="Presentación 2">
+
+<img src="img/historia3.jpeg" loading="lazy" onclick="cambiarProducto(this)" alt="Presentación 3">
+
+</div>
 
 
     
@@ -109,14 +120,32 @@
   
   <h2>Momentos Kabuki</h2>
   <div class="carousel-3d">
-    <div class="carousel-track">
-      <div class="carousel-item"><img src="img/historia1.jpeg"></div>
-      <div class="carousel-item"><img src="img/historia2.jpeg"></div>
-      <div class="carousel-item"><img src="img/historia3.jpeg"></div>
-      <div class="carousel-item"><img src="img/historia4.jpeg"></div>
-      <div class="carousel-item"><img src="img/historia5.jpeg"></div>
-    </div>
-  </div>
+
+<div class="carousel-track">
+
+<div class="carousel-item">
+<img src="img/historia1.jpeg" loading="lazy" alt="Tinta Kabuki 1">
+</div>
+
+<div class="carousel-item">
+<img src="img/historia2.jpeg" loading="lazy" alt="Tinta Kabuki 2">
+</div>
+
+<div class="carousel-item">
+<img src="img/historia3.jpeg" loading="lazy" alt="Tinta Kabuki 3">
+</div>
+
+<div class="carousel-item">
+<img src="img/historia4.jpeg" loading="lazy" alt="Tinta Kabuki 4">
+</div>
+
+<div class="carousel-item">
+<img src="img/historia5.jpeg" loading="lazy" alt="Tinta Kabuki 5">
+</div>
+
+</div>
+
+</div>
 </section>
 
 <section class="testimonios reveal">
@@ -126,7 +155,7 @@
 <div class="testimonios-grid">
 
 <div class="testimonio-card" onclick="abrirTestimonio('test1')">
-<img src="img/historia13.jpeg">
+<img src="img/historia13.jpeg" loading="lazy" alt="Resultados Kabuki">
 <div class="testimonio-info">
 <h4>María G.</h4>
 <div class="stars">★★★★★</div>
@@ -135,7 +164,7 @@
 </div>
 
 <div class="testimonio-card" onclick="abrirTestimonio('test2')">
-<img src="img/historia14.jpeg">
+<img src="img/historia14.jpeg" loading="lazy" alt="Resultados Kabuki">
 <div class="testimonio-info">
 <h4>Laura P.</h4>
 <div class="stars">★★★★★</div>
@@ -144,7 +173,7 @@
 </div>
 
 <div class="testimonio-card" onclick="abrirTestimonio('test3')">
-<img src="img/historia15.jpeg">
+<img src="img/historia15.jpeg" loading="lazy" alt="Resultados Kabuki">
 <div class="testimonio-info">
 <h4>Camila R.</h4>
 <div class="stars">★★★★★</div>
@@ -153,7 +182,7 @@
 </div>
 
 <div class="testimonio-card" onclick="abrirTestimonio('test4')">
-<img src="img/historia16.jpeg">
+<img src="img/historia16.jpeg" loading="lazy" alt="Resultados Kabuki">
 <div class="testimonio-info">
 <h4>Daniela S.</h4>
 <div class="stars">★★★★★</div>
@@ -277,7 +306,7 @@ class="whatsapp-btn"
 target="_blank"
 rel="noopener"
 >
-<img src="img/whatrsa4d.webp" alt="Comprar por WhatsApp">
+<img src="img/whatrsa4d.webp" loading="lazy" alt="Comprar por WhatsApp">
 </a>
 </div>
 
@@ -319,9 +348,11 @@ rel="noopener"
 
 <footer class="footer-video">
 
-  <video autoplay muted loop playsinline class="footer-bg-video">
-    <source src="video/labios.mp4" type="video/mp4">
-  </video>
+  <video autoplay muted loop playsinline preload="none" class="footer-bg-video">
+
+<source src="video/labios.mp4" type="video/mp4">
+
+</video>
 
   <div class="footer-overlay"></div>
 
