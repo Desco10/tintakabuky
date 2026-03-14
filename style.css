@@ -8,6 +8,19 @@ body{
   overflow-x:hidden;
 }
 
+
+
+/* TIPOGRAFÍA TITULOS */
+
+h1,
+h2,
+h3{
+font-family:'Playfair Display',serif;
+letter-spacing:.6px;
+}
+
+
+
 img,a,button,div{
 -webkit-tap-highlight-color:transparent;
 tap-highlight-color:transparent;
@@ -1084,6 +1097,14 @@ line-height:1.7;
   font-size: 3rem;
   color: white;
   margin: 0;
+  font-family:'Playfair Display',serif;
+
+letter-spacing:1px;
+
+text-shadow:
+0 4px 12px rgba(0,0,0,.25),
+0 0 25px rgba(255,160,200,.35);
+
 }
 
 .hero-subtitle {
@@ -1468,5 +1489,49 @@ line-height:1.7;
   .footer-video{
     height:200px;
   }
+
+}
+
+
+/* TITULOS SECCIONES */
+
+.presentaciones h2,
+.testimonios h2,
+.precios h2,
+.producto-info h2{
+
+font-family:'Playfair Display',serif;
+
+letter-spacing:.8px;
+
+position:relative;
+
+}
+
+
+/* subrayado elegante */
+
+
+.presentaciones h2::after,
+.testimonios h2::after,
+.precios h2::after,
+.producto-info h2::after{
+
+content:"";
+
+display:block;
+
+width:80px;
+height:3px;
+
+margin:14px auto;
+
+background:linear-gradient(
+90deg,
+#ff6b9d,
+#ffb3d1
+);
+
+border-radius:3px;
 
 }
