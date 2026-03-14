@@ -89,9 +89,7 @@ function nextSlide(){
 
   index = (index + 1) % items.length;
 
-  if(index >= items.length){
-    index = 0;
-  }
+  
 
   updateCarousel();
   setTimeout(()=>{
@@ -158,16 +156,32 @@ document.addEventListener("click",()=>{
   /* =========================
      CAMBIO DE PRESENTACIÓN
   ========================= */
-  window.cambiarProducto = function (img) {
-    const mainProduct = document.getElementById("mainProduct");
-    if (mainProduct) {
-      mainProduct.style.opacity = "0";
-      setTimeout(() => {
-        mainProduct.src = img.src;
-        mainProduct.style.opacity = "1";
-      }, 200);
-    }
-  };
+  let changingProduct = false;
+
+window.cambiarProducto = function(img){
+
+  const mainProduct = document.getElementById("mainProduct");
+
+  if(!mainProduct || changingProduct) return;
+
+  changingProduct = true;
+
+  mainProduct.style.transition = "opacity .35s ease, transform .35s ease";
+  mainProduct.style.opacity = "0";
+  mainProduct.style.transform = "scale(.96)";
+
+  setTimeout(()=>{
+
+    mainProduct.src = img.src;
+
+    mainProduct.style.opacity = "1";
+    mainProduct.style.transform = "scale(1)";
+
+    changingProduct = false;
+
+  },250);
+
+};
 
 
   /* =========================
@@ -243,3 +257,16 @@ const observer = new IntersectionObserver((entries)=>{
 });
 
 reveals.forEach(el=>observer.observe(el));
+
+
+/* pausa carrusel al hover */
+
+const carousel = document.querySelector(".carousel-3d");
+
+carousel.addEventListener("mouseenter",()=>{
+clearInterval(interval);
+});
+
+carousel.addEventListener("mouseleave",()=>{
+startCarousel();
+});

@@ -23,7 +23,7 @@ letter-spacing:.6px;
 
 img,a,button,div{
 -webkit-tap-highlight-color:transparent;
-tap-highlight-color:transparent;
+
 }
 /* =========================
    HERO PROFESIONAL
@@ -112,11 +112,20 @@ tap-highlight-color:transparent;
 
 .carousel-item img{
 
-  width:240px;
-  border-radius:18px;
+  width:260px;
+  height:auto;
+
+  object-fit:contain;
+
+  border-radius:26px;
 
   box-shadow:
-  0 25px 45px rgba(0,0,0,.25);
+  0 20px 40px rgba(0,0,0,.25),
+  0 0 25px rgba(255,160,200,.25);
+
+  transition:
+  transform .6s,
+  box-shadow .6s;
 
 }
 
@@ -129,52 +138,54 @@ tap-highlight-color:transparent;
 /* POSICIONES */
 
 .carousel-item.active{
+
 transform:
 translate(-50%,-50%)
-translateZ(200px)
-scale(1.05);
-z-index:6;
+translateZ(260px)
+scale(1.08);
+
+z-index:20;
 opacity:1;
+
 }
 
 .carousel-item.left{
 
-  transform:
-  translate(calc(-50% - 240px),-50%)
-  rotateY(40deg)
-  translateZ(80px)
-  scale(.9);
+transform:
+translate(calc(-50% - 200px),-50%)
+rotateY(35deg)
+translateZ(120px)
+scale(.92);
 
-  z-index:4;
-  opacity:.85;
+opacity:.9;
+z-index:10;
 
 }
 
 .carousel-item.right{
 
-  transform:
-  translate(calc(-50% + 240px),-50%)
-  rotateY(-40deg)
-  translateZ(80px)
-  scale(.9);
+transform:
+translate(calc(-50% + 200px),-50%)
+rotateY(-35deg)
+translateZ(120px)
+scale(.92);
 
-  z-index:4;
-  opacity:.85;
-
-}
-
-.carousel-item.back-left{
-
-  transform:
-  translate(calc(-50% - 420px),-50%)
-  rotateY(50deg)
-  translateZ(-80px)
-  scale(.7);
-
-  opacity:.5;
+opacity:.9;
+z-index:10;
 
 }
 
+.carousel-item.back-right{
+
+transform:
+translate(calc(-50% + 360px),-50%)
+rotateY(-50deg)
+translateZ(-60px)
+scale(.75);
+
+opacity:.55;
+
+}
 .carousel-item.back-right{
 
   transform:
@@ -191,12 +202,12 @@ opacity:1;
 
 .carousel-item.zoomed{
 
-  transform:
-  translate(-50%,-50%)
-  scale(1.8)
-  translateZ(260px);
+transform:
+translate(-50%,-50%)
+translateZ(320px)
+scale(1.45);
 
-  z-index:999;
+z-index:999;
 
 }
  
@@ -330,6 +341,13 @@ animation:particlesMove 35s linear infinite;
 }
 
 
+.carousel-item{
+  pointer-events:auto;
+}
+
+.carousel-item.active{
+  z-index:20;
+}
 
 
 
@@ -633,17 +651,7 @@ body.overlay{
 
 }
 
-.carousel-track{
-  pointer-events:none;
-}
 
-.carousel-item{
-  pointer-events:auto;
-}
-
-.carousel-item.active{
-  z-index:20;
-}
 /* =========================
    TESTIMONIOS
 ========================= */
@@ -1180,6 +1188,12 @@ text-shadow:
 /* =========================
    SCROLL REVEAL
 ========================= */
+
+
+
+
+
+
 
 /* =========================
    SCROLL REVEAL PREMIUM
