@@ -1204,21 +1204,18 @@ text-shadow:
 
 
 /* =========================
-   SCROLL REVEAL MODERNO
+   SCROLL REVEAL ULTRA FLUIDO
 ========================= */
 
 .reveal{
 
   opacity:0;
 
-  transform:
-  translateY(40px)
-  scale(.98);
+  transform:translateY(18px);
 
   transition:
-
-  opacity .45s ease,
-  transform .55s cubic-bezier(.22,.61,.36,1);
+  opacity .28s ease-out,
+  transform .32s cubic-bezier(.22,.61,.36,1);
 
   will-change:transform, opacity;
 
@@ -1228,9 +1225,7 @@ text-shadow:
 
   opacity:1;
 
-  transform:
-  translateY(0)
-  scale(1);
+  transform:translateY(0);
 
 }
 
@@ -1241,54 +1236,49 @@ text-shadow:
 
 .reveal-left{
 
-  transform:
-  translateX(-50px)
-  scale(.98);
+  transform:translateX(-20px);
 
 }
 
 .reveal-right{
 
-  transform:
-  translateX(50px)
-  scale(.98);
+  transform:translateX(20px);
 
 }
 
 .reveal-left.visible,
 .reveal-right.visible{
 
-  transform:
-  translateX(0)
-  scale(1);
+  transform:translateX(0);
 
 }
 
 
 /* =========================
-   SECUENCIA SUAVE
+   SECUENCIA RÁPIDA
 ========================= */
 
-.reveal:nth-child(1){transition-delay:.05s}
-.reveal:nth-child(2){transition-delay:.1s}
-.reveal:nth-child(3){transition-delay:.15s}
-.reveal:nth-child(4){transition-delay:.2s}
+.reveal:nth-child(1){transition-delay:.03s}
+.reveal:nth-child(2){transition-delay:.06s}
+.reveal:nth-child(3){transition-delay:.09s}
+.reveal:nth-child(4){transition-delay:.12s}
 
 
 /* =========================
-   OPTIMIZACIÓN MÓVIL
+   MÓVIL
 ========================= */
 
 @media (max-width:768px){
 
   .reveal{
 
-    transform:translateY(30px);
-    transition-duration:.4s;
+    transform:translateY(14px);
+    transition-duration:.25s;
 
   }
 
 }
+
 
 /* =========================
    TABLET
@@ -1535,6 +1525,22 @@ text-shadow:
 
 }
 
+
+.footer-copy{
+
+  font-size:12.5px;
+
+  color:#6b6b6b;
+
+  margin-top:18px;
+
+  letter-spacing:.6px;
+
+  font-weight:400;
+
+  opacity:.8;
+
+}
 
 /* TITULOS SECCIONES */
 
