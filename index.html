@@ -1,30 +1,42 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+<!-- ===== CONFIGURACIÓN BÁSICA ===== -->
 <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 
-<!-- =========================
-     SEO BÁSICO
-========================= -->
+<meta name="format-detection" content="telephone=no">
 
-<title>Tinta Kabuki by Moni Solano | Alta pigmentación</title>
+<meta name="theme-color" content="#f9c6d3">
+
+
+<!-- ===== SEO PRINCIPAL ===== -->
+
+<title>Tinta Kabuki by Moni Solano | Pigmentación intensa</title>
 
 <meta name="description"
-content="Descubre la tinta de labios Kabuki by Moni Solano. Alta pigmentación, hidratación y larga duración inspirada en la belleza del Cauca.">
+content="Tinta Kabuki by Moni Solano. Alta pigmentación, hidratación y larga duración para labios y mejillas. Belleza auténtica inspirada en el Cauca.">
 
 <meta name="keywords"
-content="tinta labios, tinta labios kabuki, maquillaje labios, tinta cosmética colombia, tinta labios larga duración">
+content="tinta labios, tinta labios kabuki, maquillaje labios, tinta labios larga duración, maquillaje colombiano">
 
-<meta name="author" content="DEESA-DEV">
+<meta name="author"
+content="DEESA-DEV">
 
-<meta name="robots" content="index, follow">
+<meta name="robots"
+content="index, follow">
+
+<link rel="canonical"
+href="https://tintakabuky.netlify.app">
 
 
-<!-- =========================
-     OPEN GRAPH (Facebook / WhatsApp / iMessage)
-========================= -->
+<!-- ===== OPEN GRAPH (WhatsApp / Facebook / Instagram / LinkedIn) ===== -->
+
+<meta property="og:type"
+content="website">
 
 <meta property="og:title"
 content="Tinta Kabuki by Moni Solano">
@@ -32,16 +44,8 @@ content="Tinta Kabuki by Moni Solano">
 <meta property="og:description"
 content="Alta pigmentación, hidratación y larga duración. Descubre la primera tinta Kabuki.">
 
-<meta property="og:image"
-content="https://tintakabuky.netlify.app/img/historia1.jpg">
-
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-
 <meta property="og:url"
 content="https://tintakabuky.netlify.app">
-
-<meta property="og:type" content="product">
 
 <meta property="og:site_name"
 content="Kabuki by Moni Solano">
@@ -49,58 +53,88 @@ content="Kabuki by Moni Solano">
 <meta property="og:locale"
 content="es_CO">
 
-<meta property="og:image" content="https://tintakabuky.netlify.app/img/historia1.jpg">
-<meta property="og:image:secure_url" content="https://tintakabuky.netlify.app/img/historia1.jpg">
-<meta property="og:image:type" content="image/jpeg">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
+<meta property="og:image"
+content="https://tintakabuky.netlify.app/img/preview.jpg">
 
-<!-- =========================
-     PRODUCTO (Facebook Catalog)
-========================= -->
+<meta property="og:image:secure_url"
+content="https://tintakabuky.netlify.app/img/preview.jpg">
 
-<meta property="product:price:amount" content="27000">
-<meta property="product:price:currency" content="COP">
-<meta property="product:availability" content="in stock">
-<meta property="product:brand" content="Kabuki by Moni Solano">
+<meta property="og:image:type"
+content="image/jpeg">
+
+<meta property="og:image:alt"
+content="Tinta Kabuki by Moni Solano - Alta pigmentación">
+
+<meta property="og:image:width"
+content="1200">
+
+<meta property="og:image:height"
+content="630">
 
 
-<!-- =========================
-     TWITTER CARD
-========================= -->
+<!-- ===== TWITTER CARD ===== -->
 
-<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:card"
+content="summary_large_image">
 
 <meta name="twitter:title"
 content="Tinta Kabuki by Moni Solano">
 
 <meta name="twitter:description"
-content="Alta pigmentación, hidratación y larga duración. Descubre la tinta Kabuki.">
+content="Alta pigmentación, hidratación y larga duración para labios y mejillas.">
 
 <meta name="twitter:image"
-content="https://tintakabuky.netlify.app/img/historia1.jpg">
+content="https://tintakabuky.netlify.app/img/preview.jpg">
 
 
-<!-- =========================
-     CANONICAL
-========================= -->
+<!-- ===== ICONOS ===== -->
 
-<link rel="canonical"
-href="https://tintakabuky.netlify.app">
+<link rel="icon"
+type="image/png"
+sizes="32x32"
+href="/favicon.png">
+
+<link rel="apple-touch-icon"
+sizes="180x180"
+href="/apple-touch-icon.png">
 
 
-<!-- =========================
-     MÓVIL / IOS
-========================= -->
+<!-- ===== PRELOAD IMAGEN PREVIEW ===== -->
 
-<meta name="viewport"
-content="width=device-width, initial-scale=1">
+<link rel="preload"
+as="image"
+href="/img/preview.jpg">
 
-<meta name="mobile-web-app-capable" content="yes">
 
-<meta name="apple-mobile-web-app-capable" content="yes">
+<!-- ===== PERFORMANCE ===== -->
 
-<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta http-equiv="Cache-Control"
+content="public, max-age=31536000">
+
+
+<!-- ===== STRUCTURED DATA (SEO AVANZADO) ===== -->
+
+<script type="application/ld+json">
+{
+"@context":"https://schema.org",
+"@type":"Product",
+"name":"Tinta Kabuki by Moni Solano",
+"description":"Tinta para labios y mejillas con alta pigmentación, hidratación y larga duración.",
+"image":"https://tintakabuky.netlify.app/img/preview.jpg",
+"brand":{
+"@type":"Brand",
+"name":"Kabuki by Moni Solano"
+},
+"offers":{
+"@type":"Offer",
+"price":"27000",
+"priceCurrency":"COP",
+"availability":"https://schema.org/InStock"
+}
+}
+</script>
+
+
 
 <link rel="stylesheet" href="style.css">
 
@@ -164,7 +198,7 @@ content="width=device-width, initial-scale=1">
 
    <div class="thumbnails">
 
-<img src="img/historia1.jpeg" loading="lazy" alt="Presentación Kabuki 1">
+<img src="img/historia1.1.jpeg" loading="lazy" alt="Presentación Kabuki 1">
 
 <img src="img/historia2.jpeg" loading="lazy" alt="Presentación Kabuki 2">
 
@@ -186,7 +220,7 @@ content="width=device-width, initial-scale=1">
 <div class="carousel-track">
 
 <div class="carousel-item">
-<img src="img/historia1.jpeg" loading="lazy" alt="Tinta Kabuki 1">
+<img src="img/historia1.1.jpeg" loading="lazy" alt="Tinta Kabuki 1">
 </div>
 
 <div class="carousel-item">
