@@ -156,35 +156,46 @@ document.addEventListener("click",()=>{
   /* =========================
      CAMBIO DE PRESENTACIÓN
   ========================= */
-  let changingProduct = false;
-
-window.cambiarProducto = function(img){
+ window.cambiarProducto = function(img){
 
 const mainProduct = document.getElementById("mainProduct");
 
-if(!mainProduct || changingProduct) return;
-
-changingProduct = true;
-
-mainProduct.style.transition = "opacity .3s ease, transform .3s ease";
+if(!mainProduct) return;
 
 mainProduct.style.opacity = "0";
-mainProduct.style.transform = "scale(.95)";
 
 setTimeout(()=>{
 
 mainProduct.src = img.src;
 
 mainProduct.style.opacity = "1";
-mainProduct.style.transform = "scale(1)";
 
-changingProduct = false;
-
-},220);
+},200);
 
 };
 
 
+document.querySelectorAll(".thumbnails img").forEach(img => {
+
+img.addEventListener("click", function(){
+
+const mainProduct = document.getElementById("mainProduct");
+
+document.querySelectorAll(".thumbnails img")
+.forEach(i => i.classList.remove("active"));
+
+this.classList.add("active");
+
+mainProduct.style.opacity="0";
+
+setTimeout(()=>{
+mainProduct.src = this.src;
+mainProduct.style.opacity="1";
+},200);
+
+});
+
+});
   /* =========================
      TOGGLE INFO PRODUCTO
   ========================= */
