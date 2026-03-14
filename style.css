@@ -112,7 +112,7 @@ img,a,button,div{
 
 .carousel-item img{
 
-  width:260px;
+  width:210px;
   height:auto;
 
   object-fit:contain;
@@ -128,7 +128,6 @@ img,a,button,div{
   box-shadow .6s;
 
 }
-
 /* REFLEJO tipo vitrina */
 
 .carousel-item img{
@@ -141,8 +140,8 @@ img,a,button,div{
 
 transform:
 translate(-50%,-50%)
-translateZ(260px)
-scale(1.08);
+translateZ(160px)
+scale(0.95);
 
 z-index:20;
 opacity:1;
@@ -152,25 +151,25 @@ opacity:1;
 .carousel-item.left{
 
 transform:
-translate(calc(-50% - 200px),-50%)
+translate(calc(-50% - 170px),-50%)
 rotateY(35deg)
-translateZ(120px)
-scale(.92);
+translateZ(80px)
+scale(.82);
 
-opacity:.9;
+opacity:.85;
 z-index:10;
 
 }
 
-.carousel-item.right{
+.carousel-item.left{
 
 transform:
-translate(calc(-50% + 200px),-50%)
-rotateY(-35deg)
-translateZ(120px)
-scale(.92);
+translate(calc(-50% - 170px),-50%)
+rotateY(35deg)
+translateZ(80px)
+scale(.82);
 
-opacity:.9;
+opacity:.85;
 z-index:10;
 
 }
@@ -178,25 +177,15 @@ z-index:10;
 .carousel-item.back-right{
 
 transform:
-translate(calc(-50% + 360px),-50%)
+translate(calc(-50% + 310px),-50%)
 rotateY(-50deg)
 translateZ(-60px)
-scale(.75);
+scale(.65);
 
-opacity:.55;
-
-}
-.carousel-item.back-right{
-
-  transform:
-  translate(calc(-50% + 420px),-50%)
-  rotateY(-50deg)
-  translateZ(-80px)
-  scale(.7);
-
-  opacity:.5;
+opacity:.45;
 
 }
+
 
 /* zoom al hacer click */
 
@@ -309,15 +298,15 @@ animation:particlesMove 35s linear infinite;
 @keyframes productFloat{
 
   0%{
-    transform:translate(-50%,-50%) translateZ(220px) scale(1.18);
+    transform:translate(-50%,-50%) translateZ(180px) scale(.96);
   }
 
   50%{
-    transform:translate(-50%,-54%) translateZ(220px) scale(1.20);
+    transform:translate(-50%,-53%) translateZ(180px) scale(.98);
   }
 
   100%{
-    transform:translate(-50%,-50%) translateZ(220px) scale(1.18);
+    transform:translate(-50%,-50%) translateZ(180px) scale(.96);
   }
 
 }
