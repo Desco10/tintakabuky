@@ -160,26 +160,27 @@ document.addEventListener("click",()=>{
 
 window.cambiarProducto = function(img){
 
-  const mainProduct = document.getElementById("mainProduct");
+const mainProduct = document.getElementById("mainProduct");
 
-  if(!mainProduct || changingProduct) return;
+if(!mainProduct || changingProduct) return;
 
-  changingProduct = true;
+changingProduct = true;
 
-  mainProduct.style.transition = "opacity .35s ease, transform .35s ease";
-  mainProduct.style.opacity = "0";
-  mainProduct.style.transform = "scale(.96)";
+mainProduct.style.transition = "opacity .3s ease, transform .3s ease";
 
-  setTimeout(()=>{
+mainProduct.style.opacity = "0";
+mainProduct.style.transform = "scale(.95)";
 
-    mainProduct.src = img.src;
+setTimeout(()=>{
 
-    mainProduct.style.opacity = "1";
-    mainProduct.style.transform = "scale(1)";
+mainProduct.src = img.src;
 
-    changingProduct = false;
+mainProduct.style.opacity = "1";
+mainProduct.style.transform = "scale(1)";
 
-  },250);
+changingProduct = false;
+
+},220);
 
 };
 
