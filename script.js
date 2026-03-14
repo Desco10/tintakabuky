@@ -282,3 +282,91 @@ clearInterval(interval);
 carousel.addEventListener("mouseleave",()=>{
 startCarousel();
 });
+
+
+
+
+
+
+
+
+/* =========================
+   DEV RIBBON CONTROL
+========================= */
+
+document.addEventListener("DOMContentLoaded", ()=>{
+
+const ribbon = document.querySelector(".dev-ribbon");
+const sections = document.querySelectorAll("section");
+
+function mostrarRibbon(){
+
+  ribbon.classList.add("show");
+
+  setTimeout(()=>{
+
+    ribbon.classList.remove("show");
+
+  },8000); // visible 8 segundos
+
+}
+
+/* primera aparición a los 15s */
+
+setTimeout(()=>{
+
+  mostrarRibbon();
+
+  setInterval(mostrarRibbon,35000);
+
+},15000);
+
+
+/* =========================
+   CAMBIO COLOR SEGÚN SECCIÓN
+========================= */
+
+window.addEventListener("scroll",()=>{
+
+let scrollY = window.scrollY + window.innerHeight/2;
+
+sections.forEach(sec=>{
+
+const top = sec.offsetTop;
+const bottom = top + sec.offsetHeight;
+
+if(scrollY > top && scrollY < bottom){
+
+const bg = window.getComputedStyle(sec).backgroundColor;
+
+/* limpiar clases */
+
+ribbon.classList.remove("light","pink","dark");
+
+/* detectar fondo */
+
+if(bg.includes("255, 255, 255")){
+
+ribbon.classList.add("light");
+
+}
+
+else if(bg.includes("255, 192") || bg.includes("255, 182")){
+
+ribbon.classList.add("pink");
+
+}
+
+else{
+
+ribbon.classList.add("dark");
+
+}
+
+}
+
+});
+
+});
+
+});

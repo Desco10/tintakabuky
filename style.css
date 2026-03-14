@@ -1589,69 +1589,239 @@ border-radius:3px;
 
 
 /* =========================
-   DEMO RIBBON LATERAL
+   DEV DEMO RIBBON PREMIUM
+/* =========================
+   DEV RIBBON PREMIUM
 ========================= */
 
-.demo-ribbon{
+.dev-ribbon{
 
   position:fixed;
   top:50%;
-  transform:translateY(-50%) translateX(-30px);
-
-  padding:10px 18px;
-
-  font-size:13px;
-  font-weight:500;
-
-  letter-spacing:.6px;
-
-  color:white;
-
-  background:linear-gradient(
-  135deg,
-  #ff7aa5,
-  #ff4f8a
-  );
-
-  border-radius:30px;
-
-  box-shadow:
-  0 8px 25px rgba(0,0,0,.25);
+  left:22px;
 
   opacity:0;
+transition:opacity .6s ease;
 
-  transition:
-  opacity .5s ease,
-  transform .5s ease;
+
+  transform:translateY(-50%);
+
+  display:flex;
+  align-items:center;
+  gap:10px;
+
+  padding:16px 24px;
+
+  font-size:15px;
+  font-weight:600;
+
+  letter-spacing:.8px;
+
+  border-radius:50px;
+
+  background:rgba(255,255,255,.15);
+
+  backdrop-filter:blur(14px);
+  -webkit-backdrop-filter:blur(14px);
+
+  border:1px solid rgba(255,255,255,.35);
+
+  box-shadow:
+  0 10px 40px rgba(0,0,0,.25),
+  0 0 30px rgba(255,140,180,.25);
+
+  overflow:hidden;
 
   z-index:9999;
 
-  backdrop-filter:blur(6px);
+}
+
+/* =========================
+   TEXTO 3D
+========================= */
+
+.ribbon-text{
+
+  color:#ff6fa5;
+
+  text-shadow:
+
+  0 1px 0 #fff,
+  0 2px 0 #ffc2da,
+  0 4px 6px rgba(0,0,0,.2),
+  0 0 10px rgba(255,140,180,.6);
 
 }
 
-/* posiciones */
+/* =========================
+   ICONO
+========================= */
 
-.demo-left{
+.ribbon-icon{
 
-  left:20px;
+  font-size:18px;
 
-}
-
-.demo-right{
-
-  right:20px;
-
-  transform:translateY(-50%) translateX(30px);
+  animation:iconFloat 2.5s ease-in-out infinite;
 
 }
 
-/* visible */
+@keyframes iconFloat{
 
-.demo-ribbon.show{
+  0%{transform:translateY(0)}
+  50%{transform:translateY(-5px)}
+  100%{transform:translateY(0)}
 
-  opacity:1;
+}
 
-  transform:translateY(-50%) translateX(0);
+/* =========================
+   EFECTO FLOTANTE
+========================= */
+
+.dev-ribbon{
+
+  animation:ribbonFloat 6s ease-in-out infinite;
+
+}
+
+@keyframes ribbonFloat{
+
+  0%{transform:translateY(-50%)}
+  50%{transform:translateY(-54%)}
+  100%{transform:translateY(-50%)}
+
+}
+
+/* =========================
+   HALO ROSADO COSMÉTICO
+========================= */
+
+.dev-ribbon::before{
+
+  content:"";
+
+  position:absolute;
+
+  inset:-40px;
+
+  background:radial-gradient(
+
+  circle,
+
+  rgba(255,160,200,.35),
+
+  rgba(255,180,220,.15),
+
+  transparent 70%
+
+  );
+
+  filter:blur(50px);
+
+  z-index:-1;
+
+}
+
+/* =========================
+   BORDE ELECTRICO
+========================= */
+
+.dev-ribbon::after{
+
+  content:"";
+
+  position:absolute;
+
+  inset:0;
+
+  border-radius:50px;
+
+  padding:2px;
+
+  background:linear-gradient(
+
+  120deg,
+
+  transparent,
+
+  #ff7aa5,
+
+  #ffd2e8,
+
+  #ff7aa5,
+
+  transparent
+
+  );
+
+  background-size:300% 300%;
+
+  animation:electricBorder 4s linear infinite;
+
+  -webkit-mask:
+
+  linear-gradient(#000 0 0) content-box,
+
+  linear-gradient(#000 0 0);
+
+  -webkit-mask-composite:xor;
+
+  mask-composite:exclude;
+
+}
+
+@keyframes electricBorder{
+
+  0%{background-position:0% 50%}
+  100%{background-position:300% 50%}
+
+}
+
+/* =========================
+   COLOR SEGÚN FONDO
+========================= */
+
+/* fondo claro */
+
+.dev-ribbon.light .ribbon-text{
+
+  color:#c2185b;
+
+  text-shadow:
+
+  0 1px 0 #fff,
+  0 2px 0 #ffd6e6,
+  0 4px 6px rgba(0,0,0,.15);
+
+}
+
+/* fondo rosado */
+
+.dev-ribbon.pink .ribbon-text{
+
+  color:#ffffff;
+
+  text-shadow:
+
+  0 2px 4px rgba(0,0,0,.35),
+  0 0 12px rgba(255,255,255,.6);
+
+}
+
+/* fondo oscuro */
+
+.dev-ribbon.dark .ribbon-text{
+
+  color:#ff8fb8;
+
+  text-shadow:
+
+  0 1px 0 #fff,
+  0 0 14px rgba(255,120,180,.8);
+
+}
+
+.dev-ribbon.show{
+
+opacity:1;
 
 }
